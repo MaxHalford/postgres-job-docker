@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  job:
+    build: .
+    environment:
+      - POSTGRES_HOST=job
+      - POSTGRES_DB=job
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data/
+
+  pgweb:
+    restart: always
+    image: sosedoff/pgweb
+    ports:
+      - "8081:8081"
+    links:
+      - job:job
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@job:5432/job?sslmode=disable
+    depends_on:
+      - job
