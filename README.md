@@ -48,6 +48,4 @@ session = orm.sessionmaker(bind=engine)()
 session.execute('SELECT COUNT(*) FROM cast_info')
 ```
 
-You can now run the JOB queries which are available [here](https://github.com/gregrahn/join-order-benchmark). For practical purposes we've also included them as a submodule under the `join-order-benchmark` directory.
-
-Feel free to get in touch with me at [maxhalford25@gmail.com](mailto:maxhalford25@gmail.com) if you have any questions; or even better [open an issue](https://github.com/MaxHalford/pg-job-docker/issues/new).
+You can now run any of the JOB queries available from [here](https://github.com/gregrahn/join-order-benchmark). Feel free to get in touch with me at [maxhalford25@gmail.com](mailto:maxhalford25@gmail.com) if you have any questions; or even better [open an issue](https://github.com/MaxHalford/pg-job-docker/issues/new).
